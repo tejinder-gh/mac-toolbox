@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+._*
+
+# Editor
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Temp files from the script
+/tmp/uninstaller_*

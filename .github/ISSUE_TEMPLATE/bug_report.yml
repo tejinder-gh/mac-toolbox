@@ -1,0 +1,66 @@
+name: Bug Report
+description: Something isn't working correctly
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug. Please fill in the details below.
+
+  - type: input
+    id: macos-version
+    attributes:
+      label: macOS Version
+      placeholder: "e.g., macOS 15.1 Sequoia"
+    validations:
+      required: true
+
+  - type: input
+    id: bash-version
+    attributes:
+      label: Bash Version
+      description: "Run `bash --version` and paste the first line"
+      placeholder: "e.g., GNU bash, version 3.2.57(1)-release"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Which mode were you using?
+      options:
+        - Browse & uninstall
+        - Orphan scanner
+        - Quick uninstall
+        - Dry-run
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Describe the bug clearly.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+
+  - type: textarea
+    id: dry-run-output
+    attributes:
+      label: Dry-run output
+      description: "If applicable, paste the output of `./uninstall.sh --dry-run`"
+      render: shell
+
+  - type: textarea
+    id: app-details
+    attributes:
+      label: App details (if relevant)
+      description: |
+        If a specific app triggered the issue, include:
+        - App name
+        - Bundle ID: `mdls -name kMDItemCFBundleIdentifier /Applications/AppName.app`
